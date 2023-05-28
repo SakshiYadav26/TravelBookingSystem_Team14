@@ -1,12 +1,8 @@
-
-import './App.css';
+import Login from "./Components/Login"
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Travel Booking System</h1>
-    </div>
-  );
+  return <Login />;
 }
 
 export default App;
