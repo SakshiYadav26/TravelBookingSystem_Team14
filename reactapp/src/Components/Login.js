@@ -1,38 +1,38 @@
 import "./login.css";
 function Login() {
   return (
-    <div class="wrapper">
-      <div class="container main">
-        <div class="row">
-          <div class="col-md-6 side-image">
+    <div className="wrapper">
+      <div className="container main">
+        <div className="row">
+          <div className="col-md-6 side-image">
             <img src="/images/7.webp" alt="flight " />
-            <div class="text">
+            <div className="text">
               <p>
                 Join the community of Travellers! <i>- Travelista</i>
               </p>
             </div>
           </div>
-          <div class="col-md-6 right">
-            <div class="input-box">
+          <div className="col-md-6 right">
+            <div className="input-box">
               <header>Login</header>
-              <div class="input-field">
+              <div className="input-field">
                 <input
                   type="text"
-                  class="input"
+                  className="input"
                   id="email"
                   required
                   autocomplete="off"
                 />
                 <label for="email">Email</label>
               </div>
-              <div class="input-field">
-                <input type="password" class="input" id="password" required />
+              <div className="input-field">
+                <input type="password" className="input" id="password" required />
                 <label for="password">Password</label>
               </div>
-              <div class="input-field">
-                <input type="submit" class="submit" value="Login" />
+              <div className="input-field">
+                <input type="submit" className="submit" value="Login" />
               </div>
-              <div class="signup">
+              <div className="signup">
                 <span>
                   {" "}
                   Don't have an account? <a href="#"> Register here </a>

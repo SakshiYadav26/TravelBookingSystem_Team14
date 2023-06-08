@@ -1,8 +1,10 @@
 import Login from "./Components/Login"
 import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
-  return <Login />;
+
+  return <div><Navbar/><Login /></div>;
 }
 
 export default App;
