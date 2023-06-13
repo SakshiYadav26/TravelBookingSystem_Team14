@@ -39,7 +39,7 @@ const UserProfile = () => {
             <h6 className="mb-0"  style={{fontsize:'20px'}}>Email</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            abc@xyz.com
+            {email}
           </div>
         </div>
         <hr />
@@ -48,7 +48,7 @@ const UserProfile = () => {
             <h6 className="mb-0" >Phone</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            (239) 816-9029
+            {phone}
           </div>
         </div>
         <hr />
@@ -57,7 +57,7 @@ const UserProfile = () => {
             <h6 className="mb-0">Age </h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            XX
+            {age}
           </div>
         </div>
         <hr />
@@ -66,25 +66,17 @@ const UserProfile = () => {
             <h6 className="mb-0">Gender</h6>
           </div>
           <div className="col-sm-9 text-secondary">
-            M
+            {gender}
           </div>
         </div>
         <hr />
-        <div className="row"  style={{fontsize:'20px'}}>
-          <div className="col-sm-3">
-            <h6 className="mb-0">Phone</h6>
-          </div>
-          <div className="col-sm-9 text-secondary"  >
-            (239) 816-9029
-          </div>
-        </div>
-        <hr />
+        
         <div className="row"  style={{fontsize:'20px'}}>
           <div className="col-sm-3">
             <h6 className="mb-0">Address</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            4th Cross, 
+            {address}
           </div>
         </div>
         <hr />
@@ -93,7 +85,7 @@ const UserProfile = () => {
             <h6 className="mb-0">City</h6>
           </div>
           <div className="col-sm-9 text-secondary">
-            Dallas
+            {city}
           </div>
         </div>
         <hr />
@@ -102,7 +94,7 @@ const UserProfile = () => {
             <h6 className="mb-0">State</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            Texas
+            {state}
           </div>
         </div>
         <hr />
@@ -111,7 +103,7 @@ const UserProfile = () => {
             <h6 className="mb-0" >Pincode</h6>
           </div>
           <div className="col-sm-9 text-secondary"  >
-            XXXXX
+            {pincode}
           </div>
         </div>
         <hr />

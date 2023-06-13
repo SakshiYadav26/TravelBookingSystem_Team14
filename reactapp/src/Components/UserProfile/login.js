@@ -1,9 +1,15 @@
 import React from 'react';
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useLocation } from 'react-router-dom';
 
 const Loginform = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const username = queryParams.get('username');
+  const email = queryParams.get('email');
+  const password = queryParams.get('password');
   return (
    
     <div className="card mb-3">
@@ -18,7 +24,7 @@ const Loginform = () => {
             <h6 className="mb-0"  style={{fontsize:'20px'}}>UserName</h6>
           </div>
           <div className="col-sm-9 text-secondary">
-            Kenneth Valdez
+            {username}
           </div>
         </div>
         <hr />
@@ -27,7 +33,7 @@ const Loginform = () => {
             <h6 className="mb-0"  style={{fontsize:'20px'}}>Email</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            abc@xyz.com
+            {email}
           </div>
         </div>
         <hr />
@@ -36,7 +42,7 @@ const Loginform = () => {
             <h6 className="mb-0" >Passwprd</h6>
           </div>
           <div className="col-sm-9 text-secondary" >
-            *********
+            {password}
           </div>
         </div>
        

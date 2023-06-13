@@ -3,8 +3,12 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UserProfileCard = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const fullname = queryParams.get('fullname');
   return (
-    // <div className="card a">
+    
    
   <div className="card-body">
     <div className="row">
@@ -13,7 +17,7 @@ const UserProfileCard = () => {
           <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150"  marginBottom= '10px'  marginLeft='150px'/>
           <div className="mt-3" >
             <div class ="names" style={{ fontsize: '30px' ,marginBottom: '10px'}}>
-            <h4>John Doe</h4> </div>
+            <h4>{fullname}</h4> </div>
             <div className="d-flex flex-column align-items-center text-center">
               <div className="row" style={{ marginBottom: '10px'}}>
                 <div className="col">
