@@ -1,11 +1,22 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import './SignUp.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function SignUp() {
+    // Destructure the necessary methods and properties from useForm hook
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const onSubmit = data => console.log(data);
+    const history = useHistory();
+    
+    // Handle form submission
+    const onSubmit = data => {
+        console.log(data);
+
+        // Convert form data into a query string
+        const queryParams = new URLSearchParams(data).toString();
+        // Navigate to the user profile page with the query parameters
+        history.push(`/user-profile?${queryParams}`);
+      };
 
     // console.log(watch('username'));
 

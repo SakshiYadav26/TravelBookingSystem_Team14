@@ -1,9 +1,21 @@
 import React from 'react';
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useLocation } from 'react-router-dom';
 
 const UserProfile = () => {
+  const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+  
+    const fullName = queryParams.get('fullName');
+    const email = queryParams.get('email');
+    const phone = queryParams.get('phone');
+    const age = queryParams.get('age');
+    const gender = queryParams.get('gender');
+    const address = queryParams.get('address');
+    const city = queryParams.get('city');
+    const state = queryParams.get('state');
+    const pincode = queryParams.get('pincode');
   return (
    
     <div className="card mb-3">
@@ -18,7 +30,7 @@ const UserProfile = () => {
             <h6 className="mb-0"  style={{fontsize:'20px'}}>Full Name</h6>
           </div>
           <div className="col-sm-9 text-secondary">
-            Kenneth Valdez
+            {fullName}
           </div>
         </div>
         <hr />
