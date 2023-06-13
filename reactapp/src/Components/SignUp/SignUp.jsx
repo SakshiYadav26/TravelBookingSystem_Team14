@@ -42,7 +42,7 @@ function SignUp() {
                 <div class="row">
                     <div class="col-md-6 side-image">
                         
-                        
+                     {/* this is a command    */}
                     </div>
                     <div class="col-md-6 right">
                         <div class="input-box">
