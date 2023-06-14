@@ -47,6 +47,58 @@
 .containerr {
     background-color: lightgray;
   }
-  .containe {
+.containe {
     background-color: gray;
   }
+
+  @media (max-width: 767px) {
+    .card.form-control-lg {
+      flex-wrap: wrap;
+    }
+  
+    .card.form-control-lg > div {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .card.form-control-lg > div:nth-child(1),
+    .card.form-control-lg > div:nth-child(2) {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .card .col-lg-7 {
+      order: 2;
+      margin-bottom: 20px;
+    }
+  
+    .card .miniature {
+      order: 1;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .d-flex.flex-row.flex-lg-column {
+      flex-direction: column;
+    }
+
+    .col-lg-7 {
+        order: 2;
+      }
+    
+      .miniature {
+        margin-top: 20px;
+      }
+    }
+    
+    .container {
+      overflow-x: hidden;
+    }
+    
+    .containe {
+      background-color: gray;
+      overflow-x: hidden;
+    }

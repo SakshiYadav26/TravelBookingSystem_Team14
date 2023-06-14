@@ -1,6 +1,9 @@
 import React from 'react'
 import { DatePicker,Select } from "antd";
-import FirstImage from "../Imagescar/Carimage1.jpg";
+import FirstImage from "./Image.jpg";
+import './history.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 const CarBooking=()=> {
     
@@ -109,7 +112,8 @@ const CarBooking=()=> {
                 </div>
             </div>
                 <div className='row'>
-                    <div className='col-sm flex-row mt-5 card'>
+                <div className='col-sm flex-row mt-5 card'>
+                    
 
                         
                             <div className='col-lg-7 mt-3'>
@@ -117,7 +121,7 @@ const CarBooking=()=> {
                             <img src={FirstImage} alt="Car" className="history_image"/>
                             </div>
                         
-                        <div className='miniature'>
+                        <div className=' col-lg-12 miniature'>
                             <h3>Miniature Cabs</h3><br/>
                             <h5>4 Seater</h5><br/>
                             <ul>
@@ -126,7 +130,8 @@ const CarBooking=()=> {
                         <li>Km Fare : $15 after 100kms</li>    
                         </ul>
                         </div>
-                    </div>                        
+                     
+                    </div>                      
                </div><br/><br/>
         <div className='row card'>            
             <div className="guestDetails col-lg-8 ">
