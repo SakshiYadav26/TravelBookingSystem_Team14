@@ -5,6 +5,7 @@ import ThirdImage from "../Imagescar/Carimage3.jpg";
 import "./history.css";
 const Bookinghistory = () => {
   return (
+
     <div className='container'>
         <div className='row'>
             <h4 className='history_heading Bookpage'>Booking History</h4>
