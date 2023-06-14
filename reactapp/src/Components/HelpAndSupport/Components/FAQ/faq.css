@@ -78,6 +78,8 @@ textarea {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   font-size: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 input[name="name"]::placeholder,
@@ -111,7 +113,7 @@ textarea {
 .rating label:before {
   content: '★';
   font-size: 20px;
-  color: #dfdfdf;
+  color: #555;
   transition: color 0.3s;
 }
 

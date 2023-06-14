@@ -43,7 +43,7 @@ const FeedbackForm = () => {
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
-        <h4 className="text-center">FEEDBACK FORM</h4>
+        <h4 className="text-center">Feedback Form</h4>
         <div className="form-group">
           <label htmlFor="username">
             <FontAwesomeIcon icon={faUser} />
