@@ -1,0 +1,90 @@
+.container{
+  margin-top: 15px;
+}
+.location-details {
+  border-style: ridge;
+}
+.font-bold1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding-top: 15px;
+}
+.passenger-details {
+  border-style: ridge;
+  display: flex;
+  align-items: flex-start;
+}
+.font-bold {
+  font-size: 20px;
+  margin-bottom: 5px;
+  padding-top: 8px;
+  text-align: left;
+}
+.full-col {
+  /*exclude passanger details*/
+  padding-top: 25px;
+}
+.form-row {
+  /*name and email one row and gnder one row*/
+  margin-bottom: 15px;
+}
+.form-group1 {
+  padding-left: 5px;
+}
+.form-control {
+  display: inline;
+  width: 270px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid rgb(130, 130, 134);
+}
+.text-centre {
+  text-align: left;
+  background-color: red;
+}
+
+.passenger-details .form-group {
+  margin-bottom: 10px;
+}
+
+.passenger-details .form-row {
+  align-items: flex-start;
+}
+
+.passenger-details .form-row .form-group {
+  flex-basis: 50%;
+}
+
+.passenger-details .form-row .form-group label {
+  /*name box control*/
+  display: inline-block;
+  width: 70px;
+  margin-right: 30px;
+}
+.seats-details {
+  border-style: ridge;
+}
+.button1 {
+  margin-right: 100px;
+  height: 50px;
+  justify-content: left;
+  align-items: center;
+  width: 250px;
+}
+.button-info {
+  border-style: ridge;
+  text-align: left;
+  padding-top: 10px;
+}
+.links{
+  text-align: right;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.button1 {
+  margin-right: 100px;
+  height: 50px;
+  justify-content: left;
+  align-items: center;
+  width: 250px;
+}
