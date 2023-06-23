@@ -58,4 +58,8 @@ public class UserServiceImpl implements UserService {
       return new LoginResponse("Email does not exist", false, null);
   }
 
+  public User getUserData(String email) {
+    return userRepo.findByEmail(email);
+  }
+
 }
