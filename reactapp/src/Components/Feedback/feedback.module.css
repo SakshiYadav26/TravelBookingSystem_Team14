@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Your+Font+Name&display=swap');
 
-
 /* Global styles */
-* {
+:global(*) {
   box-sizing: border-box;
 }
 
@@ -14,7 +13,6 @@ body {
   margin: 0;
   padding: 0;
   font-size: 24px;
- 
 }
 
 h4 {
@@ -22,16 +20,14 @@ h4 {
 }
 
 .container {
-    width: 600px;
-    height: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-  
- 
+  width: 600px;
+  height: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 form {
@@ -40,17 +36,15 @@ form {
   width: 500px;
   margin: 0 auto;
   background-color: #dfdfdf;
-  box-shadow :  0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   font-size: 24px;
   height: 800px;
-  
 }
 
 .field {
   margin-bottom: 16px;
   font-size: 24px;
   margin: auto;
-
 }
 
 label {
@@ -80,7 +74,6 @@ textarea {
   display: flex;
   align-items: center;
   margin-top: 8px;
-
 }
 
 .rating input[type="radio"] {
@@ -92,29 +85,22 @@ textarea {
   margin-right: 8px;
   color: #555;
   cursor: pointer;
+  position: relative;
 }
 
-/* .rating label:before {
-  content: '\f005';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+.rating label:before {
+  content: '★';
   font-size: 20px;
   color: #dfdfdf;
   transition: color 0.3s;
-} */
-.rating label:before {
-    content: '★';
-    font-size: 20px;
-    color: #dfdfdf;
-    transition: color 0.3s;
-  }
-  
+}
 
 .rating input[type="radio"]:checked + label:before {
   color: #2f4ad0;
 }
 
-button[type="reset"] {
+
+button[type="submit"] {
   background: black;
   color: #fff;
   padding: 8px 16px;
@@ -123,6 +109,8 @@ button[type="reset"] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 24px;
+  width: 200px;
+  margin: auto;
 }
 
 .social-media {

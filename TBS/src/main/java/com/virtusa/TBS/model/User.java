@@ -24,7 +24,7 @@ public class User {
   private String firstName;
   @Column(name = "lastName", length = 255)
   private String lastName;
-
+  
   @Enumerated(EnumType.STRING)
   private Role role;
 
