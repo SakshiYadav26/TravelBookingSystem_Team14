@@ -1,93 +1,185 @@
-import React from 'react'
-import { useForm } from 'react-hook-form';
-import './SignUp.css';
-import { Link, useHistory } from 'react-router-dom';
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-function SignUp() {
-    // Destructure the necessary methods and properties from useForm hook
-    const { register, handleSubmit, formState: { errors } } = useForm()
-    const history = useHistory();
-    
-    // Handle form submission
-    const onSubmit = data => {
-        console.log(data);
+function Signup() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-        // Convert form data into a query string
-        const queryParams = new URLSearchParams(data).toString();
-        // Navigate to the user profile page with the query parameters
-        history.push(`/user-profile?${queryParams}`);
-      };
+  const onSubmit = (data) => {
+    console.log(data);
+    postData(data);
+  };
 
-    // console.log(watch('username'));
+  const postData = (data) => {
+    axios.post("http://localhost:9000/api/v1/auth/users", data).then(
+      (res) => {
+        console.log(res);
+        const { token } = res.data;
+        localStorage.setItem("token", token);
+        window.location.reload();
+        toast.success("Signup Successfully", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      },
+      (error) => {
+        console.log(error);
+        toast.error("Signup failed", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+    );
+  };
 
-    return (
-        //   <div>
-        //     <section>
-        //         <div className="register">
-        //             <div className="col-1">
-        //                 <h2>Sign In</h2>
-        //                 <span>register and enjoy the service</span>
-
-        //                 <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-        // <input type="text" {...register("username")} placeholder='username' />
-        //                     <input type="text" {...register("password")} placeholder='password' />
-        //                     <input type="text" {...register("confirmpwd")} placeholder='confirm password' />
-        //                     <input type="text" {...register("mobile", { required : true, maxLength: 10 })} placeholder='mobile number' />
-        //                     {errors.mobile?.type === "required" && "Mobile Number is required"}
-        //                     {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-        //                     <button className='btn'>Sign In</button>
-        //                 </form>
-
-        //             </div>
-        //             <div className="col-2">
-        //                 <img src={img} alt="" />
-        //             </div>
-        //         </div>
-        //     </section>
-        //     </div>
-
-
-
-        <div class="wrapper">
-            <div class="container main">
-                <div class="row">
-                    <div class="col-md-6 side-image">
-                        
-                     {/* this is a command    */}
-                    </div>
-                    <div class="col-md-6 right">
-                        <div class="input-box">
-                            <header>SignUp</header>
-
-                            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
-                                <input type="text" class="input"{...register("username")} placeholder='username' required/>
-                                <input type="text" class="input"{...register("password")} placeholder='password' required/>
-                                <input type="text" class="input"{...register("confirmpwd")} placeholder='confirm password' required/>
-                                <input type="text" class="input"{...register("mobile", { required: true, maxLength: 10 })} placeholder='mobile number' required/>
-                                {errors.mobile?.type === "required" && "Mobile Number is required"}
-                                {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                                <button className='btn'>
-                                <input type="submit" class="submit" value="SignUp"  />
-                                </button>
-                            </form>
-
-
-
-
-
-
-                            <div class="signup">
-                                <span>
-                                    {" "}
-                                    Already have an account? <Link to="/login"> Login </Link>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <>
+      <div
+        className="container bg-dark text-black mt-5 py-3"
+        style={{
+          borderRadius: "10px",
+          backgroundImage: `url("https://images.pexels.com/photos/2132126/pexels-photo-2132126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`,
+        }}
+      >
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <label for="user">UserName</label>
+              <input
+                type="userName"
+                {...register("username")}
+                className="form-control"
+                id="user"
+                placeholder="UseNAme"
+                required
+              />
             </div>
-        </div>
-    )
+            <div className="form-group col-md-4">
+              <label for="user">FirstName</label>
+              <input
+                type="userName"
+                {...register("firstName")}
+                className="form-control"
+                id="user"
+                placeholder="UseNAme"
+                required
+              />
+            </div>
+            <div className="form-group col-md-4">
+              <label for="user">LastName</label>
+              <input
+                type="userName"
+                {...register("lastName")}
+                className="form-control"
+                id="user"
+                placeholder="UseNAme"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label for="inputEmail4">Email</label>
+            <input
+              type="email"
+              {...register("email")}
+              className="form-control"
+              id="inputEmail4"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              {...register("address")}
+              className="form-control"
+              id="inputAddress"
+              placeholder="1234 Main St"
+            />
+          </div>
+
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label for="Number">Mobile no.</label>
+              <input
+                type="text"
+                {...register("phone")}
+                className="form-control"
+                id="Number"
+                placeholder="0000000000"
+                required
+              />
+            </div>
+            <div className="form-group col-md-3">
+              <label for="inputPassword4">Password</label>
+              <input
+                type="password"
+                {...register("password")}
+                className="form-control"
+                id="inputPassword4"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <div class="form-group col-md-3">
+              <label for="exampleFormControlSelect1">Role</label>
+              <select
+                class="form-control"
+                id="exampleFormControlSelect1"
+                {...register("role")}
+              >
+                <option>CUSTOMER</option>
+                <option>AGENT</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="gridCheck"
+              />
+              <label className="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Sign Up
+          </button>
+          <br />
+          <span>
+            Already have an account? <Link to="/login">Login</Link>
+          </span>
+        </form>
+      </div>
+
+      <ToastContainer />
+    </>
+  );
 }
 
-export default SignUp
+export default Signup;
